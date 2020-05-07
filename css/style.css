@@ -209,13 +209,13 @@ ol {
 
 
 .section_headline::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: rgb(243, 129, 129);
-  margin: 0 auto;
-  margin-top: 42px;
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: rgb(243, 129, 129);
+    margin: 0 auto;
+    margin-top: 42px;
 }
 
 
@@ -238,21 +238,21 @@ ol {
 
 
 .services_list_item_headline {
-  font-size: 14px;
-  font-family: var(--main-font);
-  color: rgb(51, 51, 51);
-  text-transform: uppercase;
-  line-height: 1.2;
-  text-align: left;
+    font-size: 14px;
+    font-family: var(--main-font);
+    color: rgb(51, 51, 51);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: left;
 }
 
 
 .services_list_item_discription {
-  font-size: 15px;
-  font-family: var(--secondary-font);
-  color: rgb(153, 153, 153);
-  line-height: 1.6;
-  text-align: left;
+    font-size: 15px;
+    font-family: var(--secondary-font);
+    color: rgb(153, 153, 153);
+    line-height: 1.6;
+    text-align: left;
 }
 
 
@@ -320,13 +320,13 @@ ol {
 
 
 .about_team_headline::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: rgb(243, 129, 129);
-  margin: 0 auto;
-  margin-top: 42px;
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: rgb(243, 129, 129);
+    margin: 0 auto;
+    margin-top: 42px;
 }
 
 
@@ -426,12 +426,6 @@ ol {
 }
 
 
-.contacts_list_link {
-    width: 55px;
-    height: 55px;   
-}
-
-
 .overlay_contacts_list {
     position: absolute;
     top: 50%;
@@ -446,15 +440,16 @@ ol {
 }
 
 
-.contact_list_button {
+.contacts_list_link {
+    width: 55px;
+    height: 55px; 
     background-color: rgb(252, 227, 138);
-    border: none;
     transition: background-color 0.2s linear;
 }
 
 
-.contact_list_button:hover {
-  background-color: #95e1d3
+.contacts_list_link:hover {
+    background-color: #95e1d3
 }
 
 
@@ -545,6 +540,11 @@ ol {
     width: 230px;
     height: 40px;
     padding-left: 14px;
+    
+}
+
+
+.contact-form__input::placeholder {
     font-family: var(--secondary-font);
     font-style: italic;
     font-size: 15px;
