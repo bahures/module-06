@@ -425,6 +425,10 @@ ol {
     visibility: visible;
 }
 
+.team_members_list_item:hover .members_image {
+    transform: translate(-10px,-10px);
+}
+
 
 .overlay_contacts_list {
     position: absolute;
