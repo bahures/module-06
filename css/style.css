@@ -1,0 +1,569 @@
+:root {
+    --main-font: "Montserrat", sans-serif;
+    --secondary-font: "Roboto";
+}
+
+
+@keyframes rubberBand {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.visually-hidden {
+  /* Удаляем элемент из потока документа */
+  position: absolute;
+  /* Временное решение для неверно произносимого, размазанного текста */
+  white-space: nowrap;
+  /* Устанавливаем минимально возможный размер (некоторые скринридеры игнорируют элементы с нулевой высотой и шириной) */
+  width: 1px;
+  height: 1px;
+  /* Скрываем вылезающий за границы контент */
+  overflow: hidden;
+  /* Сбрасываем любые свойства, которые могут повлиять на размер элемента */
+  border: 0;
+  padding: 0;
+  /* Вырезаем ту часть контента, которая должна отображаться. */
+  /* Устаревшее свойство clip для старых браузеров */
+  clip: rect(0 0 0 0);
+  /* clip-path для новых браузеров. inset(50%) определяет область вставки, которая позволит контенту исчезнуть.  */
+  clip-path: inset(50%);
+    /* Похоже, никто до конца не понимает, почему тут margin: -1px. Кроме того, это приводит к проблемам (читай: https://github.com/h5bp/html5-boilerplate/issues/1985). */
+  margin: -1px;
+}
+
+/*--HEADERER--*/
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    padding-top: 25px;
+    padding-bottom: 135px;
+}
+
+.main-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+
+
+.logo {
+    color: #95e1d3;
+    font-size: 30px;
+    line-height: 36px;
+    font-family: var(--main-font);
+    font-weight: bold;
+    cursor: pointer;
+    animation-name: rubberBand;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+
+
+.site-navigation-link {
+    position: relative;
+    font-size: 14px;
+    line-height: 17px;
+    color: #95e1d3;
+    font-family: var(--main-font);
+    text-transform: uppercase;
+    transition: all 0.25s linear;
+}
+
+    
+.site-navigation_list {
+    width: 490px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.site-navigation-link::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(243, 129, 129);
+    bottom: -12px;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s linear;
+}
+
+
+.site-navigation-link:hover {
+    color: rgb(252, 227, 138);
+    cursor: pointer;
+}
+
+.site-navigation-link:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*--SERVICES--*/
+
+.services {
+    padding-bottom: 105px;
+}
+
+.section_headline {
+    width: 315px;
+    margin: 0 auto;
+    margin-bottom: 66px;
+}
+
+
+.work_with {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: "Kaushan Script";
+    margin-bottom: 19px;
+}
+
+
+.work_with::first-letter {
+    text-transform: uppercase;
+}
+
+
+.our_services {
+    font-family: var(--main-font);
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+
+
+.section_headline::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: rgb(243, 129, 129);
+  margin: 0 auto;
+  margin-top: 42px;
+}
+
+
+.services_list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.services_list_item {
+    width: 382px;
+    margin-bottom: 104px;
+}
+
+
+.services_list_item:nth-child(n+4) {
+    margin-bottom: 0;
+}
+
+
+.services_list_item_headline {
+  font-size: 14px;
+  font-family: var(--main-font);
+  color: rgb(51, 51, 51);
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: left;
+}
+
+
+.services_list_item_discription {
+  font-size: 15px;
+  font-family: var(--secondary-font);
+  color: rgb(153, 153, 153);
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+.icon-alarm {
+    background-image: url(../images/icon/ALARM.png);
+    background-repeat: no-repeat;
+    background-position: left 21px top;
+}
+
+
+.icon-graph {
+    background-image: url(../images/icon/LINE\ GRAPH.png);
+    background-repeat: no-repeat;
+    background-position: left 21px top;
+}
+
+
+.icon-computer {
+    background-image: url(../images/icon/COMPUTER\ _\ OK.png);
+    background-repeat: no-repeat;
+    background-position: left 21px top;
+}
+
+
+.icon-book {
+    background-image: url(../images/icon/BOOK\ 2.png);
+    background-repeat: no-repeat;
+    background-position: left 21px top;
+}
+
+
+.icon-home {
+    background-image: url(../images/icon/HOME.png);
+    background-repeat: no-repeat;
+    background-position: left 21px top;
+}
+
+
+.icon-image {
+    background-image: url(../images/icon/IMAGE.png);
+    background-repeat: no-repeat;
+    background-position: left 21px top;
+}
+
+
+.services_list_item-about {
+    width: 300px;
+    margin-left: 82px;
+}
+
+
+/*---TEAM---*/
+
+
+.about_team {
+    padding-bottom: 86px;
+}
+
+
+.about_team_headline {
+    width: 315px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+
+.about_team_headline::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: rgb(243, 129, 129);
+  margin: 0 auto;
+  margin-top: 42px;
+}
+
+
+.we_are {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: "Kaushan Script";
+    margin-bottom: 19px;
+}
+
+
+.we_are::first-letter {
+    text-transform: uppercase;
+}
+
+
+.our_team {
+    display: block;
+    font-family: var(--main-font);
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+.about_team_discription {
+    width: 940px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 15px;
+    font-family: var(--secondary-font);
+    color: rgb(153, 153, 153);
+    line-height: 1.6;
+    padding-bottom: 95px;
+}
+
+
+.team_members_list {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.members_image {
+    margin-bottom: 31px;
+    width: 380px;
+    height: 470px;
+}
+
+
+.member_name {
+    font-size: 14px;
+    font-family: var(--main-font);
+    color: rgb(51, 51, 51);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+.member_position {
+    font-size: 15px;
+    font-family: var(--secondary-font);
+    color: rgb(153, 153, 153);
+    font-style: italic;
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+.team_members_list_item {
+    position: relative;   
+}
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 380px;
+    height: 470px;
+    background-image: linear-gradient(45deg, rgb(252,227,138), rgb(243,129,129));
+    visibility: hidden;
+    transition: opacity 0.2s linear;
+}
+
+
+.team_members_list_item:hover .overlay {
+    transform: translate(-10px,-10px);
+    box-shadow: 10px 10px 0 0 rgb(149, 225, 211);
+    opacity: 0.9;
+    visibility: visible;
+}
+
+
+.contacts_list_link {
+    width: 55px;
+    height: 55px;   
+}
+
+
+.overlay_contacts_list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-basis: 235px;
+    background-color: rgb(252, 227, 138);
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-grow: 1;   
+}
+
+
+.contact_list_button {
+    background-color: rgb(252, 227, 138);
+    border: none;
+    transition: background-color 0.2s linear;
+}
+
+
+.contact_list_button:hover {
+  background-color: #95e1d3
+}
+
+
+.facebook_item {
+    background-image: url(../images/icon/facebook.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 55px;
+    height: 55px;
+}
+
+
+.twitter_item {
+    background-image: url(../images/icon/twitter.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 55px;
+    height: 55px;
+}
+
+
+.pinterest_item {
+    background-image: url(../images/icon/pinterest.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 55px;
+    height: 55px;  
+}
+
+
+.instagram_item {
+    background-image: url(../images/icon/instagram.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 55px;
+    height: 55px;
+}
+
+
+/*--FOOTER--*/
+
+.footer {
+    width: 1200px;
+    margin: 0 auto;
+    border-top: solid 1px #e5e5e5;
+    height: 63px;
+    display: flex;
+    align-items: center;
+}
+
+
+.copyright {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+
+.contact-form {
+    flex-basis: 380px;
+    display: flex;  
+}
+
+
+.contact-form__btn {
+    background-color: rgb(149, 225, 211);
+    width: 150px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+    font-family: var(--main-font);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.contact-form__input {
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(231, 231, 231);
+    background-color: rgb(255, 255, 255);
+    width: 230px;
+    height: 40px;
+    padding-left: 14px;
+    font-family: var(--secondary-font);
+    font-style: italic;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+
+.copyright_link {
+    color: #f38181;
+}
+
+
+
+
+
+
+
+
+
+
+
+
